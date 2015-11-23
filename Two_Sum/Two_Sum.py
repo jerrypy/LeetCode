@@ -1,9 +1,8 @@
 class Solution(object):
     def twoSum(self, nums, target):
         """
-        O(n^2)
-	"""
-        """
+        O(n^2) Brute force
+
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
