@@ -43,6 +43,7 @@ def twoSum(self, nums, target):
             return [ht[i][0] + 1, index_i + 1]
         else:
             if target - i in ht and ht[target - i] is not None:
+                # or we can just abondon it
                 ht[target - i].append(index_i)
             else:
                 ht[target - i] = [index_i]
