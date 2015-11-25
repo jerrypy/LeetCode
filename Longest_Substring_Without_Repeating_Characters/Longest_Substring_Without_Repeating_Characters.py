@@ -13,3 +13,19 @@ class Solution(object):
                 count += 1
             length.append(count)
         return max(length)
+
+    def lengthOfLongestSubstring(self, s):
+        """
+        Simulate what will human do to find the longest substring.
+        key is to reset the left boundary of the longest substring.
+        """
+        maxLength = 0
+        left = 0
+        length = dict()
+
+        for i, ch in enumerate(s):
+            if ch in length and left <= length[ch]:
+                left = length[ch] + 1
+            length[ch] = i
+            maxLength = max(maxLength, i - left + 1)
+        return maxLength
